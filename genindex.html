@@ -1,0 +1,1621 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/><title>Index - Kokkos documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/hacks.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Kokkos  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Kokkos  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="programmingguide.html">Programming Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Introduction.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Machine-Model.html">2. Machine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/ProgrammingModel.html">3: Programming Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Compiling.html">4. Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Initialization.html">5. Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/View.html">6: View: Multidimensional array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/ParallelDispatch.html">7. Parallel dispatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/HierarchicalParallelism.html">8. Hierarchical Parallelism</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ProgrammingGuide/Custom-Reductions.html">9. Custom Reductions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ProgrammingGuide/Custom-Reductions-Built-In-Reducers.html">9.1 Built-In-Reducers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgrammingGuide/Custom-Reductions-Built-In-Reducers-with-Custom-Scalar-Types.html">9.2 Built-In Reducers with Custom Scalar Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgrammingGuide/Custom-Reductions-Custom-Reducers.html">9.3 Custom Reducers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Atomic-Operations.html">10. Atomic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Subviews.html">11: Subviews</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Compatibility.html">12 Backwards &amp; Future Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Interoperability.html">13. Interoperability and Legacy Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/Kokkos-and-Virtual-Functions.html">14. Kokkos and Virtual Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgrammingGuide/SIMD.html">15. SIMD Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Build, Install and Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keywords.html">CMake Keywords</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="API/core-index.html">API: Core</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/Initialize-and-Finalize.html">Initialize and Finalize</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/initialize_finalize/ScopeGuard.html"><code class="docutils literal notranslate"><span class="pre">ScopeGuard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/initialize_finalize/InitializationSettings.html"><code class="docutils literal notranslate"><span class="pre">InitializationSettings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/initialize_finalize/InitArguments.html">InitArguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/View.html">View and related</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/create_mirror.html"><code class="docutils literal notranslate"><span class="pre">create_mirror[_view]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/deep_copy.html"><code class="docutils literal notranslate"><span class="pre">deep_copy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/layoutLeft.html"><code class="docutils literal notranslate"><span class="pre">LayoutLeft</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/layoutRight.html"><code class="docutils literal notranslate"><span class="pre">LayoutRight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/layoutStride.html"><code class="docutils literal notranslate"><span class="pre">LayoutStride</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/realloc.html"><code class="docutils literal notranslate"><span class="pre">realloc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/resize.html"><code class="docutils literal notranslate"><span class="pre">resize</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/subview.html"><code class="docutils literal notranslate"><span class="pre">subview</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/Subview_type.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Subview</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/view.html"><code class="docutils literal notranslate"><span class="pre">View</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/view_alloc.html"><code class="docutils literal notranslate"><span class="pre">view_alloc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/view/view_like.html">View-like Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/ParallelDispatch.html">Parallel Execution/Dispatch</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/parallel_for.html"><code class="docutils literal notranslate"><span class="pre">parallel_for</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/parallel_reduce.html"><code class="docutils literal notranslate"><span class="pre">parallel_reduce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/parallel_scan.html"><code class="docutils literal notranslate"><span class="pre">parallel_scan</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/fence.html"><code class="docutils literal notranslate"><span class="pre">fence</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/ParallelForTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelForTag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/ParallelReduceTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelReduceTag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/parallel-dispatch/ParallelScanTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelScanTag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/builtin_reducers.html">Built-in Reducers</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/ReducerConcept.html"><code class="docutils literal notranslate"><span class="pre">ReducerConcept</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/BAnd.html"><code class="docutils literal notranslate"><span class="pre">BAnd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/BOr.html"><code class="docutils literal notranslate"><span class="pre">BOr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/LAnd.html"><code class="docutils literal notranslate"><span class="pre">LAnd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/LOr.html"><code class="docutils literal notranslate"><span class="pre">LOr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/Max.html"><code class="docutils literal notranslate"><span class="pre">Max</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/MaxLoc.html"><code class="docutils literal notranslate"><span class="pre">MaxLoc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/Min.html"><code class="docutils literal notranslate"><span class="pre">Min</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/MinLoc.html"><code class="docutils literal notranslate"><span class="pre">MinLoc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/MinMax.html"><code class="docutils literal notranslate"><span class="pre">MinMax</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/MinMaxLoc.html"><code class="docutils literal notranslate"><span class="pre">MinMaxLoc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/Prod.html"><code class="docutils literal notranslate"><span class="pre">Prod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/builtinreducers/Sum.html"><code class="docutils literal notranslate"><span class="pre">Sum</span></code></a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/core/builtinreducers/ReductionScalarTypes.html">Reduction Scalar Types</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/core/builtinreducers/MinMaxLocScalar.html"><code class="docutils literal notranslate"><span class="pre">MinMaxLocScalar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/core/builtinreducers/MinMaxScalar.html"><code class="docutils literal notranslate"><span class="pre">MinMaxScalar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/core/builtinreducers/ValLocScalar.html"><code class="docutils literal notranslate"><span class="pre">ValLocScalar</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/Execution-Policies.html">Execution Policies</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/ExecutionPolicyConcept.html"><code class="docutils literal notranslate"><span class="pre">ExecutionPolicy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/MDRangePolicy.html"><code class="docutils literal notranslate"><span class="pre">MDRangePolicy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/NestedPolicies.html"><code class="docutils literal notranslate"><span class="pre">NestedPolicies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/RangePolicy.html"><code class="docutils literal notranslate"><span class="pre">RangePolicy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamHandleConcept.html"><code class="docutils literal notranslate"><span class="pre">TeamHandleConcept</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamPolicy.html"><code class="docutils literal notranslate"><span class="pre">TeamPolicy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamThreadMDRange.html"><code class="docutils literal notranslate"><span class="pre">TeamThreadMDRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamThreadRange.html"><code class="docutils literal notranslate"><span class="pre">TeamThreadRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamVectorMDRange.html"><code class="docutils literal notranslate"><span class="pre">TeamVectorMDRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/TeamVectorRange.html"><code class="docutils literal notranslate"><span class="pre">TeamVectorRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/ThreadVectorMDRange.html"><code class="docutils literal notranslate"><span class="pre">ThreadVectorMDRange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/policies/ThreadVectorRange.html"><code class="docutils literal notranslate"><span class="pre">ThreadVectorRange</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/Spaces.html">Spaces</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/execution_spaces.html">Execution Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/spaces/partition_space.html"><code class="docutils literal notranslate"><span class="pre">partition_space</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/memory_spaces.html">Memory Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/SpaceAccessibility.html">Space Accessibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="API/core/Task-Parallelism.html">Task-Parallelism</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/atomics.html">Atomics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_compare_exchange.html"><code class="docutils literal notranslate"><span class="pre">atomic_compare_exchange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_compare_exchange_strong.html"><code class="docutils literal notranslate"><span class="pre">atomic_compare_exchange_strong</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_exchange.html"><code class="docutils literal notranslate"><span class="pre">atomic_exchange</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_fetch_op.html"><code class="docutils literal notranslate"><span class="pre">atomic_fetch_[op]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_load.html"><code class="docutils literal notranslate"><span class="pre">atomic_load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_op.html"><code class="docutils literal notranslate"><span class="pre">atomic_[op]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_op_fetch.html"><code class="docutils literal notranslate"><span class="pre">atomic_[op]_fetch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/atomics/atomic_store.html"><code class="docutils literal notranslate"><span class="pre">atomic_store</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/Numerics.html">Numerics</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/numerics/mathematical-constants.html">Mathematical constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/numerics/mathematical-functions.html">Common math functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/numerics/numeric-traits.html">Numeric traits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/numerics/bit-manipulation.html">Bit manipulation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/c_style_memory_management.html">C-style memory management</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/c_style_memory_management/malloc.html"><code class="docutils literal notranslate"><span class="pre">kokkos_malloc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/c_style_memory_management/realloc.html"><code class="docutils literal notranslate"><span class="pre">kokkos_realloc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/c_style_memory_management/free.html"><code class="docutils literal notranslate"><span class="pre">kokkos_free</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="API/core/Traits.html">Traits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/core/KokkosConcepts.html">Kokkos Concepts</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/STL-Compatibility.html">STL Compatibility Issues</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/stl-compat/pair.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::pair</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/core/Utilities.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/abort.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::abort</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/num_threads.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::num_threads</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API/core/utilities/experimental.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Experimental</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="API/core/Detection-Idiom.html">Detection Idiom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/core/Macros.html">Macros</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="API/containers-index.html">API: Containers</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/Bitset.html"><code class="docutils literal notranslate"><span class="pre">Bitset</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/Bitset.html#constbitset"><code class="docutils literal notranslate"><span class="pre">ConstBitset</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/DualView.html"><code class="docutils literal notranslate"><span class="pre">DualView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/DynamicView.html"><code class="docutils literal notranslate"><span class="pre">DynamicView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/DynRankView.html"><code class="docutils literal notranslate"><span class="pre">DynRankView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/Offset-View.html"><code class="docutils literal notranslate"><span class="pre">OffsetView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/ScatterView.html"><code class="docutils literal notranslate"><span class="pre">ScatterView</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/StaticCrsGraph.html"><code class="docutils literal notranslate"><span class="pre">StaticCrsGraph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/Unordered-Map.html"><code class="docutils literal notranslate"><span class="pre">UnorderedMap</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/containers/vector.html"><code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="API/algorithms-index.html">API: Algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="API/algorithms/Random-Number.html">Random-Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/algorithms/Random-Number.html#generator">Generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/algorithms/Sort.html">Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/algorithms/Sort.html#sorting-with-nested-policies-team-and-thread-level">Sorting with nested policies (team- and thread-level)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="API/algorithms/std-algorithms-index.html">Std Algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="API/algorithms/std-algorithms/Iterators.html">Iterators</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdMinMaxElement.html">Minimum/maximum</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMinElement.html"><code class="docutils literal notranslate"><span class="pre">min_element</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMaxElement.html"><code class="docutils literal notranslate"><span class="pre">max_element</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMinMaxElement.html"><code class="docutils literal notranslate"><span class="pre">minmax_element</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdModSeq.html">Modifying Sequence</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCopy.html"><code class="docutils literal notranslate"><span class="pre">copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCopyIf.html"><code class="docutils literal notranslate"><span class="pre">copy_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCopy_n.html"><code class="docutils literal notranslate"><span class="pre">copy_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCopyBackward.html"><code class="docutils literal notranslate"><span class="pre">copy_backward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMove.html"><code class="docutils literal notranslate"><span class="pre">move</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMoveBackward.html"><code class="docutils literal notranslate"><span class="pre">move_backward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFill.html"><code class="docutils literal notranslate"><span class="pre">fill</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFill_n.html"><code class="docutils literal notranslate"><span class="pre">fill_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdTransform.html"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdGenerate.html"><code class="docutils literal notranslate"><span class="pre">generate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdGenerate_n.html"><code class="docutils literal notranslate"><span class="pre">generate_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRemove.html"><code class="docutils literal notranslate"><span class="pre">remove</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRemoveIf.html"><code class="docutils literal notranslate"><span class="pre">remove_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRemoveCopy.html"><code class="docutils literal notranslate"><span class="pre">remove_copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRemoveCopyIf.html"><code class="docutils literal notranslate"><span class="pre">remove_copy_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReplace.html"><code class="docutils literal notranslate"><span class="pre">replace</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReplaceIf.html"><code class="docutils literal notranslate"><span class="pre">replace_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReplaceCopy.html"><code class="docutils literal notranslate"><span class="pre">replace_copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReplaceCopyIf.html"><code class="docutils literal notranslate"><span class="pre">replace_copy_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdSwapRanges.html"><code class="docutils literal notranslate"><span class="pre">swap_ranges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReverse.html"><code class="docutils literal notranslate"><span class="pre">reverse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReverseCopy.html"><code class="docutils literal notranslate"><span class="pre">reverse_copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRotate.html"><code class="docutils literal notranslate"><span class="pre">rotate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdRotateCopy.html"><code class="docutils literal notranslate"><span class="pre">rotate_copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdShiftLeft.html"><code class="docutils literal notranslate"><span class="pre">shift_left</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdShiftRight.html"><code class="docutils literal notranslate"><span class="pre">shift_right</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdUnique.html"><code class="docutils literal notranslate"><span class="pre">unique</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdUniqueCopy.html"><code class="docutils literal notranslate"><span class="pre">unique_copy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdNonModSeq.html">Non-modifying Sequence</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdAdjacentFind.html"><code class="docutils literal notranslate"><span class="pre">adjacent_find</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCount.html"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdCountIf.html"><code class="docutils literal notranslate"><span class="pre">count_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdEqual.html"><code class="docutils literal notranslate"><span class="pre">equal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdAllOf.html"><code class="docutils literal notranslate"><span class="pre">all_of</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdAnyOf.html"><code class="docutils literal notranslate"><span class="pre">any_of</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdNoneOf.html"><code class="docutils literal notranslate"><span class="pre">none_of</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFind.html"><code class="docutils literal notranslate"><span class="pre">find</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFindIf.html"><code class="docutils literal notranslate"><span class="pre">find_if</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFindIfNot.html"><code class="docutils literal notranslate"><span class="pre">find_if_not</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFindEnd.html"><code class="docutils literal notranslate"><span class="pre">find_end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdFindFirstOf.html"><code class="docutils literal notranslate"><span class="pre">find_first_of</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdForEach.html"><code class="docutils literal notranslate"><span class="pre">for_each</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdForEachN.html"><code class="docutils literal notranslate"><span class="pre">for_each_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdLexicographicalCompare.html"><code class="docutils literal notranslate"><span class="pre">lexicographical_compare</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdMismatch.html"><code class="docutils literal notranslate"><span class="pre">mismatch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdSearch.html"><code class="docutils literal notranslate"><span class="pre">search</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdSearchN.html"><code class="docutils literal notranslate"><span class="pre">search_n</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdNumeric.html">Numeric</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdAdjacentDifference.html"><code class="docutils literal notranslate"><span class="pre">adjacent_difference</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdReduce.html"><code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdExclusiveScan.html"><code class="docutils literal notranslate"><span class="pre">exclusive_scan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdInclusiveScan.html"><code class="docutils literal notranslate"><span class="pre">inclusive_scan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdTransformReduce.html"><code class="docutils literal notranslate"><span class="pre">transform_reduce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdTransformExclusiveScan.html"><code class="docutils literal notranslate"><span class="pre">transform_exclusive_scan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdTransformInclusiveScan.html"><code class="docutils literal notranslate"><span class="pre">transform_inclusive_scan</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdPartioningOps.html">Partitioning</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdIsPartitioned.html"><code class="docutils literal notranslate"><span class="pre">is_partitioned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdPartitionPoint.html"><code class="docutils literal notranslate"><span class="pre">partition_point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdPartitionCopy.html"><code class="docutils literal notranslate"><span class="pre">partition_copy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="API/algorithms/std-algorithms/StdSorting.html">Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdIsSorted.html"><code class="docutils literal notranslate"><span class="pre">is_sorted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API/algorithms/std-algorithms/all/StdIsSortedUntil.html"><code class="docutils literal notranslate"><span class="pre">is_sorted_until</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="API/simd-index.html">API: SIMD</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="API/simd/simd.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/simd/simd_mask.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd_mask</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="API/simd/where_expression.html"><code class="docutils literal notranslate"><span class="pre">Experimental::where_expression</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API/alphabetical.html">API in Alphabetical Order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecation_page.html">Deprecation for Kokkos-3.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known issues</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="usecases/MPI-Halo-Exchange.html">MPI Halo Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/Average-To-Nodes.html">ScatterView averaging elements to nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/MDRangePolicy.html">MDRangePolicy Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/VirtualFunctions.html">Virtual Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/TaggedOperators.html">Tagged Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/OverlappingHostAndDeviceWork.html">Overlapping Host and Device work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/Tasking.html">Kokkos Tasking Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/Kokkos-Fortran-Interoperability.html">Fortran Interop Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/SoA-and-AoSoA-with-Cabana.html">Array of Structures and Structure of Arrays with Cabana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/WindowsHeader.html">Kokkos and <code class="docutils literal notranslate"><span class="pre">Windows.h</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/Moving_from_EnableUVM_to_SharedSpace.html">Moving code from requiring <code class="docutils literal notranslate"><span class="pre">Kokkos_ENABLE_CUDA_UVM</span></code> to using <code class="docutils literal notranslate"><span class="pre">SharedSpace</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing-and-issue-tracking/Requirements-Issues-and-Feedback.html">Requirements, Issues and Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-and-issue-tracking/Testing-Process-Details.html">Attachments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-and-issue-tracking/Testing-Processes.html">Kokkos Testing Processes and Change Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing-and-issue-tracking/Testing-Workflow-Components.html">Kokkos Testing Workflow Components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos-tutorials">Tutorials</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=rUIcWtFU5qM">1. Intro, Build, Parallel dispatch</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=O-asHTtO7O4">2. Views and Spaces</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=nGyJS8u-6GY">3. Multidim loops and Data Structures</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=s9ecpeWRePs">4. Hierarchical Parallelism</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=xEAyOod57-c">5. SIMD, Streams, Tasking</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=1J3JQ3d3cRc&amp;t=1s">6. Fortran/Python interop, MPI, PGAS</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=MH6zFYGw0HU">7. Kokkos Tools</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=_qD4X66MQF8&amp;t=1s">8. Kokkos Kernels Math Library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos">GitHub Repo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing Kokkos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#K"><strong>K</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a></div>
+</section>
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv4NK6accessERK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntType">access (C++ function)</a>
+</li>
+        <li><a href="API/core/view/layoutStride.html#_CPPv412array_layout">array_layout (C++ type)</a>, <a href="API/core/view/view.html#_CPPv412array_layout">[1]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv411assign_data12pointer_type">assign_data (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E10atomic_addvPC1TK1T">atomic_add (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_add_fetch1TPC1TK1T">atomic_add_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E10atomic_andvPC1TK1T">atomic_and (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_and_fetch1TPC1TK1T">atomic_and_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E13atomic_assignvPC1TK1T">atomic_assign (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_compare_exchange.html#_CPPv4I0E23atomic_compare_exchange1TPC1TK1TK1T">atomic_compare_exchange (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_compare_exchange_strong.html#_CPPv4I0E30atomic_compare_exchange_strongbPC1TK1TK1T">atomic_compare_exchange_strong (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E16atomic_decrementvPC1T">atomic_decrement (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_div_fetch1TPC1TK1T">atomic_div_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_exchange.html#_CPPv4I0E15atomic_exchange1TPC1TK1T">atomic_exchange (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_add1TPC1TK1T">atomic_fetch_add (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_and1TPC1TK1T">atomic_fetch_and (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_div1TPC1TK1T">atomic_fetch_div (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E19atomic_fetch_lshift1TPC1TKj">atomic_fetch_lshift (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_max1TPC1TK1T">atomic_fetch_max (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_min1TPC1TK1T">atomic_fetch_min (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_mod1TPC1TK1T">atomic_fetch_mod (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_mul1TPC1TK1T">atomic_fetch_mul (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E15atomic_fetch_or1TPC1TK1T">atomic_fetch_or (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E19atomic_fetch_rshift1TPC1TKj">atomic_fetch_rshift (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_sub1TPC1TK1T">atomic_fetch_sub (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_fetch_op.html#_CPPv4I0E16atomic_fetch_xor1TPC1TK1T">atomic_fetch_xor (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E16atomic_incrementvPC1T">atomic_increment (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_load.html#_CPPv4I0E11atomic_load1TPC1T">atomic_load (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E19atomic_lshift_fetch1TPC1TKj">atomic_lshift_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E10atomic_maxvPC1TK1T">atomic_max (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_max_fetch1TPC1TK1T">atomic_max_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E10atomic_minvPC1TK1T">atomic_min (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_min_fetch1TPC1TK1T">atomic_min_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_mod_fetch1TPC1TK1T">atomic_mod_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_mul_fetch1TPC1TK1T">atomic_mul_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E9atomic_orvPC1TK1T">atomic_or (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E15atomic_or_fetch1TPC1TK1T">atomic_or_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E19atomic_rshift_fetch1TPC1TKj">atomic_rshift_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_store.html#_CPPv4I0E12atomic_storevPC1TK1T">atomic_store (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op.html#_CPPv4I0E10atomic_subvPC1TK1T">atomic_sub (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_sub_fetch1TPC1TK1T">atomic_sub_fetch (C++ function)</a>
+</li>
+        <li><a href="API/core/atomics/atomic_op_fetch.html#_CPPv4I0E16atomic_xor_fetch1TPC1TK1T">atomic_xor_fetch (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/builtinreducers/BAnd.html#_CPPv44BAndR10value_type">BAnd (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BAnd.html#_CPPv44BAndRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0DpE5beginDaRKN6Kokkos4ViewI8DataTypeDp10PropertiesEE">begin (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4I0E6Bitset">Bitset (C++ class)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset35BIT_SCAN_FORWARD_MOVE_HINT_BACKWARDE">Bitset::BIT_SCAN_FORWARD_MOVE_HINT_BACKWARD (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset34BIT_SCAN_FORWARD_MOVE_HINT_FORWARDE">Bitset::BIT_SCAN_FORWARD_MOVE_HINT_FORWARD (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset16BIT_SCAN_REVERSEE">Bitset::BIT_SCAN_REVERSE (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset35BIT_SCAN_REVERSE_MOVE_HINT_BACKWARDE">Bitset::BIT_SCAN_REVERSE_MOVE_HINT_BACKWARD (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset34BIT_SCAN_REVERSE_MOVE_HINT_FORWARDE">Bitset::BIT_SCAN_REVERSE_MOVE_HINT_FORWARD (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset6BitsetEj">Bitset::Bitset (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset5clearEv">Bitset::clear (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset5countEv">Bitset::count (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset17find_any_set_nearEjj">Bitset::find_any_set_near (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset19find_any_unset_nearEjj">Bitset::find_any_unset_near (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset12is_allocatedEv">Bitset::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset8max_hintEv">Bitset::max_hint (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset18MOVE_HINT_BACKWARDE">Bitset::MOVE_HINT_BACKWARD (C++ member)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset5resetEj">Bitset::reset (C++ function)</a>, <a href="API/containers/Bitset.html#_CPPv4N6Bitset5resetEv">[1]</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N6Bitset3setEj">Bitset::set (C++ function)</a>, <a href="API/containers/Bitset.html#_CPPv4N6Bitset3setEv">[1]</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset4sizeEv">Bitset::size (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK6Bitset4testEj">Bitset::test (C++ function)</a>
+</li>
+        <li><a href="API/core/builtinreducers/BOr.html#_CPPv43BOrR10value_type">BOr (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BOr.html#_CPPv43BOrRK16result_view_type">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0DpE6cbeginDaRKN6Kokkos4ViewI8DataTypeDp10PropertiesEE">cbegin (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0DpE4cendDaRKN6Kokkos4ViewI8DataTypeDp10PropertiesEE">cend (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0E7complex">complex (C++ class)</a>
+</li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complex7complexERKNSt7complexI1TEE">complex::complex (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I00EN7complex7complexERK2T1RK2T2">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complex7complexERK1T">[1]</a>, <a href="API/core/utilities/complex.html#_CPPv4N7complex7complexERK7complex">[2]</a>, <a href="API/core/utilities/complex.html#_CPPv4N7complex7complexEv">[3]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4N7complex4imagE8RealType">complex::imag (C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4N7complex4imagEv">[1]</a>, <a href="API/core/utilities/complex.html#_CPPv4NK7complex4imagEv">[2]</a>
+</li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4NK7complexcvNSt7complexI10value_typeEEEv">complex::operator std::complex&lt;value_type&gt; (C++ function)</a>
+</li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexneER7complexRKNSt7complexI1TEE">complex::operator!= (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexneER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexneER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmLER7complexRKNSt7complexI1TEE">complex::operator*= (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmLER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmLER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexpLER7complexRKNSt7complexI1TEE">complex::operator+= (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexpLER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexpLER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmIER7complexRKNSt7complexI1TEE">complex::operator-= (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmIER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexmIER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexdVER7complexRKNSt7complexI1TEE">complex::operator/= (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexdVER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexdVER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexaSER7complexI6ScalarERK1T">complex::operator= (C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexaSER7complexI6ScalarERK7complexI1TE">[1]</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexaSER7complexI6ScalarERKNSt7complexI1TEE">[2]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexeqER7complexRKNSt7complexI1TEE">complex::operator== (C++ function)</a>
+
+        <ul>
+          <li><a href="API/core/utilities/complex.html#_CPPv4I0EN7complexeqER7complexRK1T">(C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4I0EN7complexeqER7complexRK7complexI1TE">[1]</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4N7complex4realE8RealType">complex::real (C++ kokkosinlinefunction)</a>, <a href="API/core/utilities/complex.html#_CPPv4N7complex4realEv">[1]</a>, <a href="API/core/utilities/complex.html#_CPPv4NK7complex4realEv">[2]</a>
+</li>
+        <li><a href="API/core/utilities/complex.html#_CPPv4N7complex10value_typeE">complex::value_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv415const_data_type">const_data_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv423const_scalar_array_type">const_scalar_array_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv410const_type">const_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv416const_value_type">const_value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4I0E11ConstBitset">ConstBitset (C++ class)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N11ConstBitset11ConstBitsetERK11ConstBitset">ConstBitset::ConstBitset (C++ function)</a>, <a href="API/containers/Bitset.html#_CPPv4N11ConstBitset11ConstBitsetERK6BitsetI6DeviceE">[1]</a>, <a href="API/containers/Bitset.html#_CPPv4N11ConstBitset11ConstBitsetEv">[2]</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK11ConstBitset5countEv">ConstBitset::count (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4N11ConstBitsetaSERK11ConstBitset">ConstBitset::operator= (C++ function)</a>, <a href="API/containers/Bitset.html#_CPPv4N11ConstBitsetaSERK6BitsetI6DeviceE">[1]</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK11ConstBitset4sizeEv">ConstBitset::size (C++ function)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4NK11ConstBitset4testEj">ConstBitset::test (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv410contributeR4ViewI3DT1Dp2VPERKN6Kokkos12Experimental11ScatterViewI3DT22LY2ES2OP2CT2DPEE">contribute (C++ function)</a>
+</li>
+        <li><a href="API/core/view/create_mirror.html#_CPPv4I00E13create_mirror14ImplMirrorTypeDTN6Kokkos19WithoutInitializingEERK5SpaceRK8ViewType">create_mirror (C++ function)</a>, <a href="API/core/view/create_mirror.html#_CPPv4I00E13create_mirror14ImplMirrorTypeRK5SpaceRK8ViewType">[1]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0DpE13create_mirrorDaRKN4Impl12ViewCtorPropIDp12ViewCtorArgsEERK8ViewType">[2]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0E13create_mirrorN8ViewType10HostMirrorEDTN6Kokkos19WithoutInitializingEERK8ViewType">[3]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0E13create_mirrorN8ViewType10HostMirrorERK8ViewType">[4]</a>
+</li>
+        <li><a href="API/core/view/create_mirror.html#_CPPv4I00E18create_mirror_view14ImplMirrorTypeDTN6Kokkos19WithoutInitializingEERK5SpaceRK8ViewType">create_mirror_view (C++ function)</a>, <a href="API/core/view/create_mirror.html#_CPPv4I00E18create_mirror_view14ImplMirrorTypeRK5SpaceRK8ViewType">[1]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0DpE18create_mirror_viewDaRKN4Impl12ViewCtorPropIDp12ViewCtorArgsEERK8ViewType">[2]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0E18create_mirror_viewN8ViewType10HostMirrorEDTN6Kokkos19WithoutInitializingEERK8ViewType">[3]</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0E18create_mirror_viewN8ViewType10HostMirrorERK8ViewType">[4]</a>
+</li>
+        <li><a href="API/core/view/create_mirror.html#_CPPv4I00E27create_mirror_view_and_copy14ImplMirrorTypeRK5SpaceRK8ViewType">create_mirror_view_and_copy (C++ function)</a>, <a href="API/core/view/create_mirror.html#_CPPv4I0DpE27create_mirror_view_and_copy14ImplMirrorTypeRKN4Impl12ViewCtorPropIDp12ViewCtorArgsEERK8ViewType">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv4NK4dataEv">data (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv49data_type">data_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/Bitset.html#_CPPv4I00E9deep_copyvR6BitsetI9DstDeviceERK11ConstBitsetI9SrcDeviceE">deep_copy (C++ function)</a>, <a href="API/containers/Bitset.html#_CPPv4I00E9deep_copyvR6BitsetI9DstDeviceERK6BitsetI9SrcDeviceE">[1]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv411device_type">device_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/layoutStride.html#_CPPv49dimension">dimension (C++ member)</a>
+
+        <ul>
+          <li><a href="API/core/view/view.html#_CPPv49dimension">(C++ type)</a>
+</li>
+        </ul></li>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0E8distanceN12IteratorType15difference_typeE12IteratorType12IteratorType">distance (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0000E8DualView">DualView (C++ class)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView16clear_sync_stateEv">DualView::clear_sync_state (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView6d_viewE">DualView::d_view (C++ member)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewERK5t_devRK6t_host">DualView::DualView (C++ function)</a>, <a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewERK8DualViewI2SD2S12S22S3ERK4Arg0Dp4Args">[1]</a>, <a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewERK8DualViewI2SS2LS2DS2MSE">[2]</a>, <a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewERKN4Impl12ViewCtorPropIDp1PEEKNSt9enable_ifIXntN4Impl12ViewCtorPropIDp1PE11has_pointerEE6size_tE4typeEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">[3]</a>, <a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewERKNSt6stringEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">[4]</a>, <a href="API/containers/DualView.html#_CPPv4N8DualView8DualViewEv">[5]</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0ENK8DualView6extentENSt9enable_ifINSt11is_integralI5iTypeE5valueE6size_tE4typeERK5iType">DualView::extent (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0ENK8DualView10extent_intENSt9enable_ifINSt11is_integralI5iTypeE5valueEiE4typeERK5iType">DualView::extent_int (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0EN8DualView15get_device_sideEiv">DualView::get_device_side (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView6h_viewE">DualView::h_view (C++ member)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView17host_mirror_spaceE">DualView::host_mirror_space (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4NK8DualView12is_allocatedEv">DualView::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView15modified_deviceE">DualView::modified_device (C++ member)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView14modified_flagsE">DualView::modified_flags (C++ member)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView13modified_hostE">DualView::modified_host (C++ member)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0EN8DualView6modifyEvv">DualView::modify (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0ENK8DualView9need_syncEbv">DualView::need_sync (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView7reallocEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">DualView::realloc (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView6resizeEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">DualView::resize (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4NK8DualView4spanEv">DualView::span (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView18span_is_contiguousEv">DualView::span_is_contiguous (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0ENK8DualView6strideEvP5iType">DualView::stride (C++ function)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0EN8DualView4syncEvRKN4Impl9enable_ifIXooNSt7is_sameIN6traits9data_typeEN6traits19non_const_data_typeEE5valueENSt7is_sameI6DeviceiE5valueEEiE4typeE">DualView::sync (C++ function)</a>, <a href="API/containers/DualView.html#_CPPv4I0EN8DualView4syncEvRKN4Impl9enable_ifIXoontNSt7is_sameIN6traits9data_typeEN6traits19non_const_data_typeEE5valueENSt7is_sameI6DeviceiE5valueEEiE4typeE">[1]</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView5t_devE">DualView::t_dev (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView11t_dev_constE">DualView::t_dev_const (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView22t_dev_const_randomreadE">DualView::t_dev_const_randomread (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView25t_dev_const_randomread_umE">DualView::t_dev_const_randomread_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView14t_dev_const_umE">DualView::t_dev_const_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView8t_dev_umE">DualView::t_dev_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView6t_hostE">DualView::t_host (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView12t_host_constE">DualView::t_host_const (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView23t_host_const_randomreadE">DualView::t_host_const_randomread (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView26t_host_const_randomread_umE">DualView::t_host_const_randomread_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView15t_host_const_umE">DualView::t_host_const_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView9t_host_umE">DualView::t_host_um (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView15t_modified_flagE">DualView::t_modified_flag (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView16t_modified_flagsE">DualView::t_modified_flags (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4N8DualView6traitsE">DualView::traits (C++ type)</a>
+</li>
+        <li><a href="API/containers/DualView.html#_CPPv4I0EN8DualView4viewERKN4Impl4if_cINSt7is_sameIN5t_dev12memory_spaceEN6Device12memory_spaceEE5valueE5t_dev6t_hostE4typeEv">DualView::view (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4I0DpE11DynamicView">DynamicView (C++ class)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView17allocation_extentEv">DynamicView::allocation_extent (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView10array_typeE">DynamicView::array_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView10chunk_sizeEv">DynamicView::chunk_size (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView10const_typeE">DynamicView::const_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView4dataEv">DynamicView::data (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView11DynamicViewERK11DynamicViewI2RTDp2RPE">DynamicView::DynamicView (C++ function)</a>, <a href="API/containers/DynamicView.html#_CPPv4N11DynamicView11DynamicViewERKNSt6stringEKjKj">[1]</a>, <a href="API/containers/DynamicView.html#_CPPv4N11DynamicView11DynamicViewERR11DynamicView">[2]</a>, <a href="API/containers/DynamicView.html#_CPPv4N11DynamicView11DynamicViewEv">[3]</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4I0ENK11DynamicView6extentE6size_tRK5iType">DynamicView::extent (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4I0ENK11DynamicView10extent_intEiRK5iType">DynamicView::extent_int (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView10HostMirrorE">DynamicView::HostMirror (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView12is_allocatedEv">DynamicView::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView5labelEv">DynamicView::label (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView14non_const_typeE">DynamicView::non_const_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicViewclERK2I0DpRK4Args">DynamicView::operator() (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView12pointer_typeE">DynamicView::pointer_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView14reference_typeE">DynamicView::reference_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView34reference_type_is_lvalue_referenceE">DynamicView::reference_type_is_lvalue_reference (C++ member)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4I0EN11DynamicView13resize_serialEvRK7IntType">DynamicView::resize_serial (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView4sizeEv">DynamicView::size (C++ kokkosinlinefunction)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView4spanEv">DynamicView::span (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView18span_is_contiguousEv">DynamicView::span_is_contiguous (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4I0ENK11DynamicView6strideEvRK5iType">DynamicView::stride (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_0Ev">DynamicView::stride_0 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_1Ev">DynamicView::stride_1 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_2Ev">DynamicView::stride_2 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_3Ev">DynamicView::stride_3 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_4Ev">DynamicView::stride_4 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_5Ev">DynamicView::stride_5 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_6Ev">DynamicView::stride_6 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView8stride_7Ev">DynamicView::stride_7 (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4N11DynamicView6traitsE">DynamicView::traits (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynamicView.html#_CPPv4NK11DynamicView9use_countEv">DynamicView::use_count (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4I0000E11DynRankView">DynRankView (C++ class)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView6accessERK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntTypeRK7IntType">DynRankView::access (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView12array_layoutE">DynRankView::array_layout (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView15const_data_typeE">DynRankView::const_data_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView23const_scalar_array_typeE">DynRankView::const_scalar_array_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView10const_typeE">DynRankView::const_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView16const_value_typeE">DynRankView::const_value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView4dataEv">DynRankView::data (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView9data_typeE">DynRankView::data_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11device_typeE">DynRankView::device_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView9dimensionE">DynRankView::dimension (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK11DynRankViewI2DTDp4PropE">DynRankView::DynRankView (C++ function)</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK11DynRankViewI2DTDp4PropEDp4Args">[1]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK12ScratchSpaceDpRK7IntType">[2]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK12ScratchSpaceRK12array_layout">[3]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK12pointer_typeDpRK7IntType">[4]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK15AllocPropertiesDpRK7IntType">[5]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK15AllocPropertiesRK12array_layout">[6]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERK4ViewI2RTDp2RPE">[7]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERKNSt6stringEDpRK7IntType">[8]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERKNSt6stringERK12array_layout">[9]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERKNSt6stringERK12array_layout">[10]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewERR11DynRankView">[11]</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView11DynRankViewEv">[12]</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView15execution_spaceE">DynRankView::execution_space (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4I0ENK11DynRankView6extentE6size_tRK5iType">DynRankView::extent (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4I0ENK11DynRankView10extent_intEiRK5iType">DynRankView::extent_int (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView17host_mirror_spaceE">DynRankView::host_mirror_space (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView10HostMirrorE">DynRankView::HostMirror (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView12is_allocatedEv">DynRankView::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView5labelEv">DynRankView::label (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView6layoutEv">DynRankView::layout (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView12memory_spaceE">DynRankView::memory_space (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView13memory_traitsE">DynRankView::memory_traits (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView19non_const_data_typeE">DynRankView::non_const_data_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView27non_const_scalar_array_typeE">DynRankView::non_const_scalar_array_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView14non_const_typeE">DynRankView::non_const_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView20non_const_value_typeE">DynRankView::non_const_value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankViewclEDpRK7IntType">DynRankView::operator() (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView12pointer_typeE">DynRankView::pointer_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView4rankEv">DynRankView::rank (C++ function)</a>
+
+        <ul>
+          <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView4rankE">(C++ type)</a>
+</li>
+        </ul></li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView12rank_dynamicE">DynRankView::rank_dynamic (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView14reference_typeE">DynRankView::reference_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView34reference_type_is_lvalue_referenceE">DynRankView::reference_type_is_lvalue_reference (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView24required_allocation_sizeE6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t">DynRankView::required_allocation_size (C++ function)</a>, <a href="API/containers/DynRankView.html#_CPPv4N11DynRankView24required_allocation_sizeERK12array_layout">[1]</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView17scalar_array_typeE">DynRankView::scalar_array_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView9size_typeE">DynRankView::size_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView4spanEv">DynRankView::span (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView18span_is_contiguousEv">DynRankView::span_is_contiguous (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView10specializeE">DynRankView::specialize (C++ type)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4I0ENK11DynRankView6strideE6size_tRK5iType">DynRankView::stride (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_0Ev">DynRankView::stride_0 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_1Ev">DynRankView::stride_1 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_2Ev">DynRankView::stride_2 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_3Ev">DynRankView::stride_3 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_4Ev">DynRankView::stride_4 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_5Ev">DynRankView::stride_5 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_6Ev">DynRankView::stride_6 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView8stride_7Ev">DynRankView::stride_7 (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4NK11DynRankView9use_countEv">DynRankView::use_count (C++ function)</a>
+</li>
+        <li><a href="API/containers/DynRankView.html#_CPPv4N11DynRankView10value_typeE">DynRankView::value_type (C++ type)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0DpE3endDaRKN6Kokkos4ViewI8DataTypeDp10PropertiesEE">end (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv415execution_space">execution_space (C++ type)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv4I0ENK6extentE6size_tRK5iType">extent (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4I0ENK10extent_intEiRK5iType">extent_int (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv417host_mirror_space">host_mirror_space (C++ type)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv410HostMirror">HostMirror (C++ type)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/builtinreducers/BAnd.html#_CPPv4NK4initER10value_type">init (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BOr.html#_CPPv4NK4initER10value_type">[1]</a>, <a href="API/core/builtinreducers/LAnd.html#_CPPv4NK4initER10value_type">[2]</a>, <a href="API/core/builtinreducers/LOr.html#_CPPv4NK4initER10value_type">[3]</a>, <a href="API/core/builtinreducers/Max.html#_CPPv4NK4initER10value_type">[4]</a>, <a href="API/core/builtinreducers/MaxLoc.html#_CPPv4NK4initER10value_type">[5]</a>, <a href="API/core/builtinreducers/Min.html#_CPPv4NK4initER10value_type">[6]</a>, <a href="API/core/builtinreducers/MinLoc.html#_CPPv4NK4initER10value_type">[7]</a>, <a href="API/core/builtinreducers/MinMax.html#_CPPv4NK4initER10value_type">[8]</a>, <a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv4NK4initER10value_type">[9]</a>, <a href="API/core/builtinreducers/Prod.html#_CPPv4NK4initER10value_type">[10]</a>, <a href="API/core/builtinreducers/ReducerConcept.html#_CPPv4NK4initER10value_type">[11]</a>, <a href="API/core/builtinreducers/Sum.html#_CPPv4NK4initER10value_type">[12]</a>
+</li>
+        <li><a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv422InitializationSettings">InitializationSettings (C++ class)</a>
+</li>
+        <li><a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv4NK22InitializationSettings18get_PARAMETER_NAMEEv">InitializationSettings::get_PARAMETER_NAME (C++ function)</a>
+</li>
+        <li><a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv4NK22InitializationSettings18has_PARAMETER_NAMEEv">InitializationSettings::has_PARAMETER_NAME (C++ function)</a>
+</li>
+        <li><a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv4N22InitializationSettings22InitializationSettingsERK13InitArguments">InitializationSettings::InitializationSettings (C++ function)</a>, <a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv4N22InitializationSettings22InitializationSettingsEv">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/initialize_finalize/InitializationSettings.html#_CPPv4N22InitializationSettings18set_PARAMETER_NAMEE14PARAMETER_TYPE">InitializationSettings::set_PARAMETER_NAME (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK12is_allocatedEv">is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv413is_assignableRK4ViewI2DTDp4PropE">is_assignable (C++ function)</a>
+</li>
+        <li><a href="API/core/view/layoutStride.html#_CPPv423is_extent_constructible">is_extent_constructible (C++ member)</a>
+</li>
+        <li><a href="API/algorithms/std-algorithms/Iterators.html#_CPPv4I0E9iter_swapv12IteratorType12IteratorType">iter_swap (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="J" class="genindex-section">
+  <h2>J</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/builtinreducers/BAnd.html#_CPPv4NK4joinER10value_typeRK10value_type">join (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BOr.html#_CPPv4NK4joinER10value_typeRK10value_type">[1]</a>, <a href="API/core/builtinreducers/LAnd.html#_CPPv4NK4joinER10value_typeRK10value_type">[2]</a>, <a href="API/core/builtinreducers/LOr.html#_CPPv4NK4joinER10value_typeRK10value_type">[3]</a>, <a href="API/core/builtinreducers/Max.html#_CPPv4NK4joinER10value_typeRK10value_type">[4]</a>, <a href="API/core/builtinreducers/MaxLoc.html#_CPPv4NK4joinER10value_typeRK10value_type">[5]</a>, <a href="API/core/builtinreducers/Min.html#_CPPv4NK4joinER10value_typeRK10value_type">[6]</a>, <a href="API/core/builtinreducers/MinLoc.html#_CPPv4NK4joinER10value_typeRK10value_type">[7]</a>, <a href="API/core/builtinreducers/MinMax.html#_CPPv4NK4joinER10value_typeRK10value_type">[8]</a>, <a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv4NK4joinER10value_typeRK10value_type">[9]</a>, <a href="API/core/builtinreducers/Prod.html#_CPPv4NK4joinER10value_typeRK10value_type">[10]</a>, <a href="API/core/builtinreducers/ReducerConcept.html#_CPPv4NK4joinER10value_typeRK10value_type">[11]</a>, <a href="API/core/builtinreducers/Sum.html#_CPPv4NK4joinER10value_typeRK10value_type">[12]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="K" class="genindex-section">
+  <h2>K</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/deep_copy.html#_CPPv4I000EN6Kokkos9deep_copyEvRK9ExecSpaceRK8ViewDestRK7ViewSrc">Kokkos::deep_copy (C++ function)</a>, <a href="API/core/view/deep_copy.html#_CPPv4I00EN6Kokkos9deep_copyEvRK8ViewDestRK7ViewSrc">[1]</a>, <a href="API/core/view/deep_copy.html#_CPPv4I00EN6Kokkos9deep_copyEvRK9ExecSpaceRK8ViewDestRKN8ViewDest10value_typeE">[2]</a>, <a href="API/core/view/deep_copy.html#_CPPv4I00EN6Kokkos9deep_copyEvRK9ExecSpaceRN7ViewSrc10value_typeERK7ViewSrc">[3]</a>, <a href="API/core/view/deep_copy.html#_CPPv4I0EN6Kokkos9deep_copyEvRK8ViewDestRKN8ViewDest10value_typeE">[4]</a>, <a href="API/core/view/deep_copy.html#_CPPv4I0EN6Kokkos9deep_copyEvRN7ViewSrc10value_typeERK7ViewSrc">[5]</a>
+</li>
+        <li><a href="API/core/parallel-dispatch/parallel_for.html#_CPPv4I00EN6Kokkos12parallel_forERK10ExecPolicyRK11FunctorType">Kokkos::parallel_for (C++ function)</a>, <a href="API/core/parallel-dispatch/parallel_for.html#_CPPv4I00EN6Kokkos12parallel_forERKNSt6stringERK10ExecPolicyRK11FunctorType">[1]</a>
+</li>
+        <li><a href="API/core/parallel-dispatch/parallel_scan.html#_CPPv4I000EN6Kokkos13parallel_scanERK10ExecPolicyRK11FunctorTypeR10ReturnType">Kokkos::parallel_scan (C++ function)</a>, <a href="API/core/parallel-dispatch/parallel_scan.html#_CPPv4I000EN6Kokkos13parallel_scanERKNSt6stringERK10ExecPolicyRK11FunctorTypeR10ReturnType">[1]</a>, <a href="API/core/parallel-dispatch/parallel_scan.html#_CPPv4I00EN6Kokkos13parallel_scanERK10ExecPolicyRK11FunctorType">[2]</a>, <a href="API/core/parallel-dispatch/parallel_scan.html#_CPPv4I00EN6Kokkos13parallel_scanERKNSt6stringERK10ExecPolicyRK11FunctorType">[3]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/c_style_memory_management/free.html#_CPPv4I0E11kokkos_freevPv">kokkos_free (C++ function)</a>
+</li>
+        <li><a href="API/core/c_style_memory_management/malloc.html#_CPPv4I0E13kokkos_mallocPv6size_t">kokkos_malloc (C++ function)</a>, <a href="API/core/c_style_memory_management/malloc.html#_CPPv4I0E13kokkos_mallocPvRK6string6size_t">[1]</a>
+</li>
+        <li><a href="API/core/c_style_memory_management/realloc.html#_CPPv4I0E14kokkos_reallocPvPv6size_t">kokkos_realloc (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv4NK5labelEv">label (C++ function)</a>
+</li>
+        <li><a href="API/core/builtinreducers/LAnd.html#_CPPv44LAndR10value_type">LAnd (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/LAnd.html#_CPPv44LAndRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK6layoutEv">layout (C++ function)</a>
+</li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv410LayoutLeft">LayoutLeft (C++ struct)</a>
+</li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft12array_layoutE">LayoutLeft::array_layout (C++ type)</a>
+</li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft9dimensionE">LayoutLeft::dimension (C++ member)</a>
+</li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft23is_extent_constructibleE">LayoutLeft::is_extent_constructible (C++ member)</a>
+</li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft10LayoutLeftERK10LayoutLeft">LayoutLeft::LayoutLeft (C++ function)</a>, <a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft10LayoutLeftERR10LayoutLeft">[1]</a>
+
+        <ul>
+          <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeft10LayoutLeftE6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t">(C++ kokkosinlinefunction)</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeftaSERK10LayoutLeft">LayoutLeft::operator= (C++ function)</a>, <a href="API/core/view/layoutLeft.html#_CPPv4N10LayoutLeftaSERR10LayoutLeft">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/layoutRight.html#_CPPv411LayoutRight">LayoutRight (C++ struct)</a>
+</li>
+        <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight12array_layoutE">LayoutRight::array_layout (C++ type)</a>
+</li>
+        <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight9dimensionE">LayoutRight::dimension (C++ member)</a>
+</li>
+        <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight23is_extent_constructibleE">LayoutRight::is_extent_constructible (C++ member)</a>
+</li>
+        <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight11LayoutRightERK11LayoutRight">LayoutRight::LayoutRight (C++ function)</a>, <a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight11LayoutRightERR11LayoutRight">[1]</a>
+
+        <ul>
+          <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRight11LayoutRightE6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t">(C++ kokkosinlinefunction)</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRightaSERK11LayoutRight">LayoutRight::operator= (C++ function)</a>, <a href="API/core/view/layoutRight.html#_CPPv4N11LayoutRightaSERR11LayoutRight">[1]</a>
+</li>
+        <li><a href="API/core/view/layoutStride.html#_CPPv412LayoutStride">LayoutStride (C++ class)</a>
+
+        <ul>
+          <li><a href="API/core/view/layoutStride.html#_CPPv412LayoutStrideRK12LayoutStride">(C++ function)</a>, <a href="API/core/view/layoutStride.html#_CPPv412LayoutStrideRR12LayoutStride">[1]</a>
+</li>
+          <li><a href="API/core/view/layoutStride.html#_CPPv412LayoutStride6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t">(C++ kokkosinlinefunction)</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/builtinreducers/LOr.html#_CPPv43LOrR10value_type">LOr (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/LOr.html#_CPPv43LOrRK16result_view_type">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/builtinreducers/Max.html#_CPPv43MaxR10value_type">Max (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/Max.html#_CPPv43MaxRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/builtinreducers/MaxLoc.html#_CPPv46MaxLocR10value_type">MaxLoc (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/MaxLoc.html#_CPPv46MaxLocRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/policies/MDRangePolicy.html#_CPPv413MDRangePolicyRKN6Kokkos5ArrayI7int64_t4rankEERKN6Kokkos5ArrayI7int64_t4rankEE">MDRangePolicy (C++ function)</a>, <a href="API/core/policies/MDRangePolicy.html#_CPPv413MDRangePolicyRKN6Kokkos5ArrayI7int64_t4rankEERKN6Kokkos5ArrayI7int64_t4rankEERKN6Kokkos5ArrayI7int64_t4rankEE">[1]</a>, <a href="API/core/policies/MDRangePolicy.html#_CPPv413MDRangePolicyv">[2]</a>, <a href="API/core/policies/MDRangePolicy.html#_CPPv4I000E13MDRangePolicyRKNSt16initializer_listI2OTEERKNSt16initializer_listI2ITEE">[3]</a>, <a href="API/core/policies/MDRangePolicy.html#_CPPv4I000E13MDRangePolicyRKNSt16initializer_listI2OTEERKNSt16initializer_listI2ITEERNSt16initializer_listI2TTEE">[4]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv412memory_space">memory_space (C++ type)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv413memory_traits">memory_traits (C++ type)</a>
+</li>
+        <li><a href="API/core/builtinreducers/Min.html#_CPPv43MinR10value_type">Min (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/Min.html#_CPPv43MinRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/builtinreducers/MinLoc.html#_CPPv46MinLocR10value_type">MinLoc (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/MinLoc.html#_CPPv46MinLocRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/builtinreducers/MinMax.html#_CPPv46MinMaxR10value_type">MinMax (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/MinMax.html#_CPPv46MinMaxRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv49MinMaxLocR10value_type">MinMaxLoc (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv49MinMaxLocRK16result_view_type">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv419non_const_data_type">non_const_data_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv427non_const_scalar_array_type">non_const_scalar_array_type (C++ type)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv414non_const_type">non_const_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv420non_const_value_type">non_const_value_type (C++ type)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv4I00Eneb7ViewDst7ViewSrc">operator!= (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NKclEDpRK7IntType">operator() (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/layoutStride.html#_CPPv4aSRK12LayoutStride">operator= (C++ function)</a>, <a href="API/core/view/layoutStride.html#_CPPv4aSRR12LayoutStride">[1]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4I00Eeqb7ViewDst7ViewSrc">operator== (C++ function)</a>
+</li>
+        <li><a href="API/core/view/layoutStride.html#_CPPv416order_dimensionsKiPCK10iTypeOrderPCK10iTypeDimen">order_dimensions (C++ kokkosinlinefunction)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/spaces/partition_space.html#_CPPv4I0DpE15partition_spaceNSt6vectorI9ExecSpaceEERK9ExecSpaceDp4Args">partition_space (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/NestedPolicies.html#_CPPv47PerTeam14TeamMemberType">PerTeam (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/policies/NestedPolicies.html#_CPPv49PerThread14TeamMemberType">PerThread (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv412pointer_type">pointer_type (C++ type)</a>
+</li>
+        <li><a href="API/core/builtinreducers/Prod.html#_CPPv44ProdR10value_type">Prod (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/Prod.html#_CPPv44ProdRK16result_view_type">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/policies/RangePolicy.html#_CPPv411RangePolicyv">RangePolicy (C++ function)</a>, <a href="API/core/policies/RangePolicy.html#_CPPv4IDpE11RangePolicyRK14ExecutionSpaceRK7int64_tRK7int64_tDpK8InitArgs">[1]</a>, <a href="API/core/policies/RangePolicy.html#_CPPv4IDpE11RangePolicyRK7int64_tRK7int64_tDpK8InitArgs">[2]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv44rankv">rank (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv412rank_dynamicv">rank_dynamic (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/builtinreducers/ReducerConcept.html#_CPPv47ReducerR10value_type">Reducer (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/ReducerConcept.html#_CPPv47ReducerRK16result_view_type">[1]</a>
+</li>
+        <li><a href="API/core/builtinreducers/BAnd.html#_CPPv4NK9referenceEv">reference (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BOr.html#_CPPv4NK9referenceEv">[1]</a>, <a href="API/core/builtinreducers/LAnd.html#_CPPv4NK9referenceEv">[2]</a>, <a href="API/core/builtinreducers/LOr.html#_CPPv4NK9referenceEv">[3]</a>, <a href="API/core/builtinreducers/Max.html#_CPPv4NK9referenceEv">[4]</a>, <a href="API/core/builtinreducers/MaxLoc.html#_CPPv4NK9referenceEv">[5]</a>, <a href="API/core/builtinreducers/Min.html#_CPPv4NK9referenceEv">[6]</a>, <a href="API/core/builtinreducers/MinLoc.html#_CPPv4NK9referenceEv">[7]</a>, <a href="API/core/builtinreducers/MinMax.html#_CPPv4NK9referenceEv">[8]</a>, <a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv4NK9referenceEv">[9]</a>, <a href="API/core/builtinreducers/Prod.html#_CPPv4NK9referenceEv">[10]</a>, <a href="API/core/builtinreducers/ReducerConcept.html#_CPPv4NK9referenceEv">[11]</a>, <a href="API/core/builtinreducers/Sum.html#_CPPv4NK9referenceEv">[12]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv414reference_type">reference_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv424required_allocation_size6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t">required_allocation_size (C++ function)</a>, <a href="API/core/view/view.html#_CPPv424required_allocation_sizeRK12array_layout">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv417scalar_array_type">scalar_array_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4I0_i00_iE11ScatterView">ScatterView (C++ class)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4NK11ScatterView6accessEv">ScatterView::access (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4NK11ScatterView15contribute_intoERK4ViewI2DTDp2RPE">ScatterView::contribute_into (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView14data_type_infoE">ScatterView::data_type_info (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView18internal_data_typeE">ScatterView::internal_data_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView18internal_view_typeE">ScatterView::internal_view_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4NK11ScatterView12is_allocatedEv">ScatterView::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView23original_reference_typeE">ScatterView::original_reference_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView19original_value_typeE">ScatterView::original_value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView18original_view_typeE">ScatterView::original_view_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView7reallocEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">ScatterView::realloc (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView5resetEv">ScatterView::reset (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView12reset_exceptERK4ViewI2DTDp2RPE">ScatterView::reset_except (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView6resizeEK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tK6size_t">ScatterView::resize (C++ function)</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4N11ScatterView11ScatterViewERK4ViewI2RTDp2RPE">ScatterView::ScatterView (C++ function)</a>, <a href="API/containers/ScatterView.html#_CPPv4N11ScatterView11ScatterViewERKN6Kokkos4Impl12ViewCtorPropIDp1PEEDp4Dims">[1]</a>, <a href="API/containers/ScatterView.html#_CPPv4N11ScatterView11ScatterViewERKNSt6stringEDp4Dims">[2]</a>, <a href="API/containers/ScatterView.html#_CPPv4N11ScatterView11ScatterViewEv">[3]</a>
+</li>
+        <li><a href="API/containers/ScatterView.html#_CPPv4NK11ScatterView7subviewEv">ScatterView::subview (C++ function)</a>
+</li>
+        <li><a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv410ScopeGuard">ScopeGuard (C++ class)</a>
+</li>
+        <li><a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuardaSERK10ScopeGuard">ScopeGuard::operator= (C++ function)</a>, <a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuardaSERR10ScopeGuard">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4IDpEN10ScopeGuard10ScopeGuardEDpRR4Args">ScopeGuard::ScopeGuard (C++ function)</a>, <a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuard10ScopeGuardERK10ScopeGuard">[1]</a>, <a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuard10ScopeGuardERK13InitArguments">[2]</a>, <a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuard10ScopeGuardERR10ScopeGuard">[3]</a>, <a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuard10ScopeGuardERiA_Pc">[4]</a>
+</li>
+        <li><a href="API/core/initialize_finalize/ScopeGuard.html#_CPPv4N10ScopeGuardD0Ev">ScopeGuard::~ScopeGuard (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK4sizeEv">size (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv49size_type">size_type (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK4spanEv">span (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK18span_is_contiguousEv">span_is_contiguous (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv410specialize">specialize (C++ type)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4I0ENK6strideE6size_tRK5iType">stride (C++ function)</a>, <a href="API/core/view/view.html#_CPPv4I0ENK6strideEvP5iType">[1]</a>
+
+        <ul>
+          <li><a href="API/core/view/layoutStride.html#_CPPv46stride">(C++ member)</a>
+</li>
+        </ul></li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_0Ev">stride_0 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_1Ev">stride_1 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_2Ev">stride_2 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_3Ev">stride_3 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_4Ev">stride_4 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_5Ev">stride_5 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_6Ev">stride_6 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK8stride_7Ev">stride_7 (C++ function)</a>
+</li>
+        <li><a href="API/core/view/subview.html#_CPPv4I0DpE7subview11IMPL_DETAILRK8ViewTypeDp4Args">subview (C++ function)</a>
+</li>
+        <li><a href="API/core/builtinreducers/Sum.html#_CPPv43SumR10value_type">Sum (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/Sum.html#_CPPv43SumRK16result_view_type">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv417TeamHandleConcept">TeamHandleConcept (C++ class)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConcept15execution_spaceE">TeamHandleConcept::execution_space (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept11league_rankEv">TeamHandleConcept::league_rank (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept11league_sizeEv">TeamHandleConcept::league_size (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConceptaSERK17TeamHandleConcept">TeamHandleConcept::operator= (C++ function)</a>, <a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConceptaSERR17TeamHandleConcept">[1]</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConcept20scratch_memory_spaceE">TeamHandleConcept::scratch_memory_space (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept12team_barrierEv">TeamHandleConcept::team_barrier (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4I00ENK17TeamHandleConcept14team_broadcastEvRK7ClosureR1TKi">TeamHandleConcept::team_broadcast (C++ kokkosinlinefunction)</a>, <a href="API/core/policies/TeamHandleConcept.html#_CPPv4I0ENK17TeamHandleConcept14team_broadcastEvR1TKi">[1]</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept9team_rankEv">TeamHandleConcept::team_rank (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4I0ENK17TeamHandleConcept11team_reduceEvRK11ReducerType">TeamHandleConcept::team_reduce (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4I0ENK17TeamHandleConcept9team_scanE1TRK1TPC1T">TeamHandleConcept::team_scan (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept12team_scratchEi">TeamHandleConcept::team_scratch (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept10team_shmemEv">TeamHandleConcept::team_shmem (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept9team_sizeEv">TeamHandleConcept::team_size (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConcept17TeamHandleConceptERK17TeamHandleConcept">TeamHandleConcept::TeamHandleConcept (C++ function)</a>, <a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConcept17TeamHandleConceptERR17TeamHandleConcept">[1]</a>, <a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConcept17TeamHandleConceptEv">[2]</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4NK17TeamHandleConcept14thread_scratchEi">TeamHandleConcept::thread_scratch (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/policies/TeamHandleConcept.html#_CPPv4N17TeamHandleConceptD0Ev">TeamHandleConcept::~TeamHandleConcept (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4IDpE10TeamPolicy">TeamPolicy (C++ class)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy10chunk_sizeEv">TeamPolicy::chunk_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy15execution_spaceE">TeamPolicy::execution_space (C++ type)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10index_typeE">TeamPolicy::index_type (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy17iteration_patternE">TeamPolicy::iteration_pattern (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy13launch_boundsE">TeamPolicy::launch_bounds (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy11league_sizeEv">TeamPolicy::league_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy11member_typeE">TeamPolicy::member_type (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy13schedule_typeE">TeamPolicy::schedule_type (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy12scratch_sizeEii">TeamPolicy::scratch_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy16scratch_size_maxEi">TeamPolicy::scratch_size_max (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy14set_chunk_sizeEi">TeamPolicy::set_chunk_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy16set_scratch_sizeERKiRKN4Impl12PerTeamValueE">TeamPolicy::set_scratch_size (C++ function)</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy16set_scratch_sizeERKiRKN4Impl12PerTeamValueERKN4Impl14PerThreadValueE">[1]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy16set_scratch_sizeERKiRKN4Impl14PerThreadValueE">[2]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy16set_scratch_sizeERKiRKN4Impl14PerThreadValueERKN4Impl12PerTeamValueE">[3]</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy17team_scratch_sizeEi">TeamPolicy::team_scratch_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy9team_sizeEv">TeamPolicy::team_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4I0ENK10TeamPolicy13team_size_maxEiRK11FunctorTypeRK14ParallelForTag">TeamPolicy::team_size_max (C++ function)</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4I0ENK10TeamPolicy13team_size_maxEiRK11FunctorTypeRK17ParallelReduceTag">[1]</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4I0ENK10TeamPolicy21team_size_recommendedEiRK11FunctorTypeRK14ParallelForTag">TeamPolicy::team_size_recommended (C++ function)</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4I0ENK10TeamPolicy21team_size_recommendedEiRK11FunctorTypeRK17ParallelReduceTag">[1]</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyE10index_type10index_type10index_type">TeamPolicy::TeamPolicy (C++ function)</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyE10index_typeN4Impl6AUTO_tE10index_type">[1]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyE15execution_space10index_type10index_type10index_type">[2]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyE15execution_space10index_typeN4Impl6AUTO_tE10index_type">[3]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyERK10TeamPolicy">[4]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyERR10TeamPolicy">[5]</a>, <a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy10TeamPolicyEv">[6]</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4NK10TeamPolicy19thread_scratch_sizeEi">TeamPolicy::thread_scratch_size (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy17vector_length_maxEv">TeamPolicy::vector_length_max (C++ function)</a>
+</li>
+        <li><a href="API/core/policies/TeamPolicy.html#_CPPv4N10TeamPolicy8work_tagE">TeamPolicy::work_tag (C++ type)</a>
+</li>
+        <li><a href="API/core/policies/NestedPolicies.html#_CPPv415TeamThreadRange14TeamMemberType9IndexType">TeamThreadRange (C++ function)</a>, <a href="API/core/policies/NestedPolicies.html#_CPPv415TeamThreadRange14TeamMemberType9IndexType9IndexType">[1]</a>
+</li>
+        <li><a href="API/core/policies/NestedPolicies.html#_CPPv417ThreadVectorRange14TeamMemberType9IndexType">ThreadVectorRange (C++ function)</a>, <a href="API/core/policies/NestedPolicies.html#_CPPv417ThreadVectorRange14TeamMemberType9IndexType9IndexType">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4I000E12UnorderedMap">UnorderedMap (C++ class)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap8capacityEv">UnorderedMap::capacity (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4N12UnorderedMap5clearEv">UnorderedMap::clear (C++ function)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap6existsE3Key">UnorderedMap::exists (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap4findE3Key">UnorderedMap::find (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap6insertE3Key5Value">UnorderedMap::insert (C++ kokkosinlinefunction)</a>, <a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap6insertE3key">[1]</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap12is_allocatedEv">UnorderedMap::is_allocated (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap6key_atE8uint32_t">UnorderedMap::key_at (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4N12UnorderedMap6rehashE8uint32_t">UnorderedMap::rehash (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap4sizeEv">UnorderedMap::size (C++ function)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4N12UnorderedMap12UnorderedMapE8uint32_t">UnorderedMap::UnorderedMap (C++ function)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap8valid_atE8uint32_t">UnorderedMap::valid_at (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK12UnorderedMap8value_atE8uint32_t">UnorderedMap::value_at (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv424UnorderedMapInsertResult">UnorderedMapInsertResult (C++ class)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK24UnorderedMapInsertResult8existingEv">UnorderedMapInsertResult::existing (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK24UnorderedMapInsertResult6failedEv">UnorderedMapInsertResult::failed (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK24UnorderedMapInsertResult5indexEv">UnorderedMapInsertResult::index (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/Unordered-Map.html#_CPPv4NK24UnorderedMapInsertResult7successEv">UnorderedMapInsertResult::success (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv4NK9use_countEv">use_count (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/core/view/view.html#_CPPv410value_type">value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4I00E6vector">vector (C++ class)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector6assignE6size_tRK6Scalar">vector::assign (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector4backEv">vector::back (C++ function)</a>, <a href="API/containers/vector.html#_CPPv4NK6vector4backEv">[1]</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector5beginEv">vector::begin (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector5clearEv">vector::clear (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector14const_iteratorE">vector::const_iterator (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector13const_pointerE">vector::const_pointer (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector15const_referenceE">vector::const_reference (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector4dataEv">vector::data (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector14device_to_hostEv">vector::device_to_host (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector5emptyEv">vector::empty (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector3endEv">vector::end (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector4findE6Scalar">vector::find (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector5frontEv">vector::front (C++ function)</a>, <a href="API/containers/vector.html#_CPPv4NK6vector5frontEv">[1]</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector14host_to_deviceEv">vector::host_to_device (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector12is_allocatedEv">vector::is_allocated (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector9is_sortedEv">vector::is_sorted (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector8iteratorE">vector::iterator (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector11lower_boundERK6size_tRK6size_tRK6Scalar">vector::lower_bound (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector8max_sizeEv">vector::max_size (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector9on_deviceEv">vector::on_device (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector7on_hostEv">vector::on_host (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vectorclEi">vector::operator() (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vectorixEi">vector::operator[] (C++ kokkosinlinefunction)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector7pointerE">vector::pointer (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector8pop_backEv">vector::pop_back (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector9push_backE6Scalar">vector::push_back (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector9referenceE">vector::reference (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector7reserveE6size_t">vector::reserve (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector6resizeE6size_t">vector::resize (C++ function)</a>, <a href="API/containers/vector.html#_CPPv4N6vector6resizeE6size_tRK6Scalar">[1]</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector18set_overallocationEf">vector::set_overallocation (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector4sizeEv">vector::size (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4NK6vector4spanEv">vector::span (C++ function)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector10value_typeE">vector::value_type (C++ type)</a>
+</li>
+        <li><a href="API/containers/vector.html#_CPPv4N6vector6vectorEi6Scalar">vector::vector (C++ function)</a>, <a href="API/containers/vector.html#_CPPv4N6vector6vectorEv">[1]</a>
+</li>
+        <li><a href="API/core/view/view.html#_CPPv44View12pointer_typeDpRK7IntType">View (C++ function)</a>, <a href="API/core/view/view.html#_CPPv44View12pointer_typeRK12array_layout">[1]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK12ScratchSpaceDpRK7IntType">[2]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK12ScratchSpaceRK12array_layout">[3]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK15AllocPropertiesDpRK7IntType">[4]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK15AllocPropertiesRK12array_layout">[5]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK4ViewI2DTDp4PropE">[6]</a>, <a href="API/core/view/view.html#_CPPv44ViewRK4ViewI2DTDp4PropEDp4Args">[7]</a>, <a href="API/core/view/view.html#_CPPv44ViewRKNSt6stringEDpRK7IntType">[8]</a>, <a href="API/core/view/view.html#_CPPv44ViewRKNSt6stringERK12array_layout">[9]</a>, <a href="API/core/view/view.html#_CPPv44ViewRR4View">[10]</a>, <a href="API/core/view/view.html#_CPPv44Viewv">[11]</a>
+</li>
+        <li><a href="API/core/builtinreducers/BAnd.html#_CPPv4NK4viewEv">view (C++ kokkosinlinefunction)</a>, <a href="API/core/builtinreducers/BOr.html#_CPPv4NK4viewEv">[1]</a>, <a href="API/core/builtinreducers/LAnd.html#_CPPv4NK4viewEv">[2]</a>, <a href="API/core/builtinreducers/LOr.html#_CPPv4NK4viewEv">[3]</a>, <a href="API/core/builtinreducers/Max.html#_CPPv4NK4viewEv">[4]</a>, <a href="API/core/builtinreducers/MaxLoc.html#_CPPv4NK4viewEv">[5]</a>, <a href="API/core/builtinreducers/Min.html#_CPPv4NK4viewEv">[6]</a>, <a href="API/core/builtinreducers/MinLoc.html#_CPPv4NK4viewEv">[7]</a>, <a href="API/core/builtinreducers/MinMax.html#_CPPv4NK4viewEv">[8]</a>, <a href="API/core/builtinreducers/MinMaxLoc.html#_CPPv4NK4viewEv">[9]</a>, <a href="API/core/builtinreducers/Prod.html#_CPPv4NK4viewEv">[10]</a>, <a href="API/core/builtinreducers/ReducerConcept.html#_CPPv4NK4viewEv">[11]</a>, <a href="API/core/builtinreducers/Sum.html#_CPPv4NK4viewEv">[12]</a>
+</li>
+        <li><a href="API/core/view/view_alloc.html#_CPPv4IDpE10view_alloc12impl_definedDpRK4Args">view_alloc (C++ function)</a>
+</li>
+        <li><a href="API/core/view/view_alloc.html#_CPPv4IDpE9view_wrap12impl_definedDpRK4Args">view_wrap (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2014, National Technology &amp; Engineering Solutions of Sandia, LLC (NTESS)
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    </body>
+</html>
